@@ -1,8 +1,8 @@
 .DS_Store
 readmin.rst
-contribution.md
+contributing.md
 user_guide/
-
+.editconfig
 application/cache/*
 !application/cache/index.html
 
