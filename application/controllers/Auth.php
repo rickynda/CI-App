@@ -9,4 +9,9 @@ class Auth extends CI_Controller {
         $this->load->view('template/auth_footer');
 
     }
+    public function register(){
+        $this->load->view('template/auth_header');
+        $this->load->view('auth/register');
+        $this->load->view('template/auth_footer');
+    }
 }
