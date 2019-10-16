@@ -13,16 +13,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item <?php if ($title == 'Dashboard'){echo"active";} ?>">  
-  <a class="nav-link" href="<?php
-                            if ($user['role_id']){
-                              
-                              if ($user['role_id']==1){
-                                 echo base_url('admin/index'); ;
-                              }else{
-                                echo base_url('user/index');;  
-                              }
-                            }
-                            ?>">
+  <a class="nav-link" href="<?= base_url('dashboard');?>">
     <i class="fas fa-fw fa-tachometer-alt" href=""></i>
     <span>Dashboard</span></a>
 </li>

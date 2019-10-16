@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
 
     public function index(){
         if ($this->session->userdata('email')) {
-            redirect('user');
+            redirect('dashboard');
         }
         $this->form_validation->set_rules('email','Email','trim|required');
         $this->form_validation->set_rules('password','Password','trim|required');
@@ -42,11 +42,7 @@ class Auth extends CI_Controller {
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 1) {
-                        redirect('dashboard/admin');
-                    } else {
-                        redirect('dashboard/user');
-                    }
+                    redirect('dashboard');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
                     redirect('auth');
@@ -63,7 +59,7 @@ class Auth extends CI_Controller {
     }
     public function register(){
         if ($this->session->userdata('email')) {
-            redirect('user');
+            redirect('dashboard');
         }
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -86,7 +82,7 @@ class Auth extends CI_Controller {
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'role_id' => 1,
+                'role_id' => 2,
                 'is_active' => 1,
                 'date_created' => time()
             ];
@@ -103,12 +99,7 @@ class Auth extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
         redirect('auth');
     }
-    public function blocked()
-    {
-        $data['user'] = $this->db->get_where('user', ['role_id' => $this->session->userdata('role_id')])->row_array();
-        $this->load->view('auth/blocked',$data);
-        
-    }
+    
     
     
 
