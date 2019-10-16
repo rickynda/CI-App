@@ -9,6 +9,9 @@ class Auth extends CI_Controller {
     }
 
     public function index(){
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
         $this->form_validation->set_rules('email','Email','trim|required');
         $this->form_validation->set_rules('password','Password','trim|required');
         if($this->form_validation->run()==false){
@@ -100,7 +103,12 @@ class Auth extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
         redirect('auth');
     }
-
+    public function blocked()
+    {
+        
+        $this->load->view('auth/blocked');
+        
+    }
     
     
 

@@ -27,6 +27,8 @@
     <span>Dashboard</span></a>
 </li>
 
+     
+
 <!-- Divider -->
 <hr class="sidebar-divider">
 
@@ -69,12 +71,19 @@
                 <?php else : ?>
             <li class="nav-item">
                 <?php endif; ?>
-                <a class="nav-link pb-0" href="<?= base_url($sm['url']); ?>">
-                    <i class="<?= $sm['icon']; ?>"></i>
-                    <span><?= $sm['title']; ?></span></a>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#<?= $sm['target'];?>" aria-expanded="true" aria-controls="collapseUtilities">
+                      <i class="<?= $sm['icon']; ?>"></i>
+                      <span><?= $sm['title'] ?></span>
+                    </a>
+                  <div id="<?= $sm['target'];?>" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                      <a class="collapse-item" href="utilities-color.html">Colors</a>
+                    </div>
+                  </div>
             </li>
-            <?php endforeach; ?>
 
+  
+            <?php endforeach; ?>                  
             <hr class="sidebar-divider mt-3">
 
             <?php endforeach; ?>            
