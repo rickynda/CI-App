@@ -43,9 +43,9 @@ class Auth extends CI_Controller {
                     ];
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
-                        redirect('admin');
+                        redirect('dashboard/admin');
                     } else {
-                        redirect('user');
+                        redirect('dashboard/user');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
@@ -105,8 +105,8 @@ class Auth extends CI_Controller {
     }
     public function blocked()
     {
-        
-        $this->load->view('auth/blocked');
+        $data['user'] = $this->db->get_where('user', ['role_id' => $this->session->userdata('role_id')])->row_array();
+        $this->load->view('auth/blocked',$data);
         
     }
     
