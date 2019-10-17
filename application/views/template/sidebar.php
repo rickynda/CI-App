@@ -70,18 +70,20 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                     <?php 
                         $category_id= $sm['category_id'];
+                        
                         $querysubMenuCategory =" SELECT * 
-                                                FROM `user_sub_menu_category` join `user_sub_menu`
-                                                ON `user_sub_menu_category`.`category_id` = `user_sub_menu`.`id`
-                                                WHERE `user_sub_menu_category`.`category_id` =  $category_id
-                                                AND `user_sub_menu_category`.`is_active` = 1          
+                                                FROM `user_sub_menu_category` JOIN `user_sub_menu`
+                                                ON `user_sub_menu_category`.`id` = `user_sub_menu`.`id`
+                                                WHERE `user_sub_menu_category`.`category_id`= $category_id
+                                                AND `user_sub_menu_category`.`is_activee`=1         
                         
                                               ";
                         
                         $subMenuCategory = $this->db->query($querysubMenuCategory)->result_array();
                     ?>
                       <?php foreach ($subMenuCategory as $smc): ?>
-                      <a class="collapse-item" href="<?= $smc['url']; ?>"> <?=$smc['title']; ?></a>
+                      
+                      <a class="collapse-item" href="<?= $smc['url']; ?>"> <?=$smc['category_title']; ?></a>
                       <?php endforeach; ?>
                     </div>
                   </div>
