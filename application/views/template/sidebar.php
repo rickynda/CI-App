@@ -70,7 +70,7 @@
                         $category_id= $sm['category_id'];
                         $querysubMenuCategory =" SELECT * 
                                                 FROM `user_sub_menu_category` JOIN `user_sub_menu`
-                                                ON `user_sub_menu_category`.`id` = `user_sub_menu`.`id`
+                                                ON `user_sub_menu_category`.`category_id` = `user_sub_menu`.`category_id`
                                                 WHERE `user_sub_menu_category`.`category_id`= $category_id
                                                 AND `user_sub_menu_category`.`is_activee`=1
                                               ";
