@@ -68,10 +68,25 @@
                     </a>
                   <div id="<?= $sm['target'];?>" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                      <a class="collapse-item" href="utilities-color.html">Colors</a>
+                    <?php 
+                        $category_id= $sm['category_id'];
+                        $querysubMenuCategory =" SELECT * 
+                                                FROM `user_sub_menu_category` join `user_sub_menu`
+                                                ON `user_sub_menu_category`.`category_id` = `user_sub_menu`.`id`
+                                                WHERE `user_sub_menu_category`.`category_id` =  $category_id
+                                                AND `user_sub_menu_category`.`is_active` = 1          
+                        
+                                              ";
+                        
+                        $subMenuCategory = $this->db->query($querysubMenuCategory)->result_array();
+                    ?>
+                      <?php foreach ($subMenuCategory as $smc): ?>
+                      <a class="collapse-item" href="<?= $smc['url']; ?>"> <?=$smc['title']; ?></a>
+                      <?php endforeach; ?>
                     </div>
                   </div>
             </li>
+            
 
   
             <?php endforeach; ?>                  
