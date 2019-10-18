@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Editprofile extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
@@ -15,7 +15,7 @@ class Profile extends CI_Controller {
         $this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
-        $this->load->view('profile');
+        $this->load->view('editprofile');
         $this->load->view('template/footer');
     }
     
