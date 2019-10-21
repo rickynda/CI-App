@@ -62,9 +62,11 @@
             </div>
             <form action="<?= base_url('menumanagement'); ?>" method="post">
                 <div class="modal-body">
+                <table class="table table-borderless">
                     <div class="form-group">
                         <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
                     </div>
+                </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

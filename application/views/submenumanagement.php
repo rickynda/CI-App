@@ -26,7 +26,7 @@
                         <th scope="col">Menu</th>
                         <th scope="col">CategoryID</th>
                         <th scope="col">Icon</th>
-                        <th scope="col">Active</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -39,7 +39,14 @@
                         <td><?= $sm['menu']; ?></td>
                         <td><?= $sm['category_id']; ?></td>
                         <td><?= $sm['icon']; ?></td>
-                        <td><?= $sm['is_active']; ?></td>
+                        <td>
+                            <?php if($sm['is_active']==1){
+                               echo '<span class="badge badge-pill badge-primary">Active</span>';
+                            }else{
+                               echo ' <span class="badge badge-pill badge-secondary">Non Active</span>';
+                            }
+                            ?>
+                        </td>
                         <td>
                             <a href="<?= base_url(); ?>submenumanagement/edit/<?= $sm['id']; ?>" class="badge badge-success" >edit</a>
                             <a href="" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>

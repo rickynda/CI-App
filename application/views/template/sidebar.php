@@ -80,7 +80,7 @@
                   <div id="<?= $sm['target'];?>" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">                   
                     <div class="bg-white py-2 collapse-inner rounded">                   
                       <?php foreach ($subMenuCategory as $smc): ?>                      
-                      <a class="collapse-item" href="<?= $smc['url']; ?>"> <?=$smc['category_title']; ?></a>
+                      <a class="collapse-item" href="<?= base_url($smc['url']); ?>"> <?=$smc['category_title']; ?></a>
                       <?php endforeach; ?>
 <!--END LOOPING SUB-MENU-CATEGORY -->
                     </div>
