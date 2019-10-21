@@ -49,13 +49,16 @@
                         </td>
                         <td>
                             <a href="<?= base_url(); ?>submenumanagement/edit/<?= $sm['id']; ?>" class="badge badge-success" >edit</a>
-                            <a href="" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>
+                            <a href="<?= base_url(); ?>submenumanagement/delete/<?= $sm['id']; ?>" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <div class="alert alert-dark" role="alert">
+            Please use unique <a class="alert-link">CategoryID</a> for foreign key !
+            </div>
 
 
         </div>

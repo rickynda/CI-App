@@ -12,7 +12,7 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#NewMenu">Add New Menu</a>
 
             <table class="table table-hover">
                 <thead>
@@ -29,8 +29,8 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $m['menu']; ?></td>
                         <td>
-                            <a href="" class="badge badge-success">edit</a>
-                            <a href="" class="badge badge-danger">delete</a>
+                            <a href="<?= base_url(); ?>menumanagement/edit/<?= $m['id']; ?>" class="badge badge-success">edit</a>
+                            <a href="" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -49,9 +49,28 @@
 
 
 <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure delete this Menu?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="<?= base_url(); ?>menumanagement/delete/<?= $m['id']; ?>">Yes</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+
 
 <!-- Modal -->
-<div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+<div class="modal fade" id="NewMenu" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
