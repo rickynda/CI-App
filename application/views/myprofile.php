@@ -20,7 +20,7 @@
                     <h5 class="card-title"><?= $user['name']; ?></h5>
                     <p class="card-text"><?= $user['email']; ?></p>
                     <p class="card-text"><small class="text-muted">Member since <?= date('d F Y', $user['date_created']); ?></small></p>
-                    <a href="<?=base_url('editprofile') ?>" class="btn btn-outline-primary">edit</a>
+                    <a href="<?=base_url('myprofile/edit') ?>" class="btn btn-outline-primary">edit</a>
                     <a href="#" class="btn btn-outline-primary">Change Password</a>
                 </div>
             </div>

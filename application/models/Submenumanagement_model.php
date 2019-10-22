@@ -22,15 +22,19 @@ class Submenumanagement_model extends CI_Model{
     }
 
 
-    public function editMenu(){
-        $data=[
-            "menu" => $this->input->post('menu', true)
+    public function editsubMenu(){
+        $isi=[
+            'menu_id' => $this->input->post('menu_id'),
+            'title' => $this->input->post('title'),
+            'category_id' => $this->input->post('categoryid'),
+            'target' => $this->input->post('target'),
+            'icon' => $this->input->post('icon'),
+            'is_active' => $this->input->post('isactive')
         ];
         $this->db->where('id', $this->input->post('id'));
-        $this->db->update('user_sub_menu', $data);
+        $this->db->update('user_sub_menu', $isi);
+        
     }
 
-    public function getMenubyId($id){
-        return $this->db->get('user_sub_menu', ['id' => $id])->row_array();
-    }
+   
 }
