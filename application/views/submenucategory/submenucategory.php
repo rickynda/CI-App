@@ -1,25 +1,24 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+ <!-- Begin Page Content -->
+ <div class="container-fluid">
 
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800"><?= $title; ?></h1>
+            <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
-
-    <div class="row">
-        <div class="col-lg">
             <?php if (validation_errors()) : ?>
             <div class="alert alert-danger" role="alert">
                 <?= validation_errors(); ?>
             </div>
             <?php endif; ?>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                    <thead><!-- Begin Page Content -->
 
-            <?= $this->session->flashdata('message'); ?>
-
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Add New  Category</a>
-
-            <table class="table table-hover">
-                <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">CategoryID</th>
@@ -47,21 +46,18 @@
                             ?>
                         </td>
                         <td>
-                            <a href="<?= base_url(); ?>submenumanagement/edit/<?= $sm['id']; ?>" class="badge badge-success" >edit</a>
-                            <a href="<?= base_url(); ?>submenumanagement/delete/<?= $sm['id']; ?>" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>
+                            <a href="<?= base_url(); ?>submenucategory/edit/<?= $sm['id']; ?>" class="badge badge-success" >edit</a>
+                            <a href="<?= base_url(); ?>submenucategory/delete/<?= $sm['id']; ?>" class="badge badge-danger" data-toggle="modal" data-target="#deleteModal">delete</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <div class="alert alert-dark" role="alert">
-            Please use unique <a class="alert-link">CategoryID</a> for foreign key !
+            <br>
             </div>
-
-
-        </div>
-    </div>
+            </div>
+          </div>
 
 
 
@@ -133,3 +129,4 @@
         </div>
     </div>
 </div> 
+
