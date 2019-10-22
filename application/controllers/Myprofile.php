@@ -14,7 +14,7 @@ class Myprofile extends CI_Controller {
         $this->load->view('template/header',$data);
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
-        $this->load->view('myprofile');
+        $this->load->view('profile/myprofile');
         $this->load->view('template/footer');
     }
 
@@ -26,7 +26,7 @@ class Myprofile extends CI_Controller {
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar', $data);
             $this->load->view('template/topbar', $data);
-            $this->load->view('editprofile', $data);
+            $this->load->view('profile/editprofile', $data);
             $this->load->view('template/footer');
         } else {
             $name = $this->input->post('name');

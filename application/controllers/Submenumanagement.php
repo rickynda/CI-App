@@ -29,7 +29,7 @@ class Submenumanagement extends CI_Controller {
             $this->load->view('template/header',$data);
             $this->load->view('template/sidebar');
             $this->load->view('template/topbar');
-            $this->load->view('submenumanagement');
+            $this->load->view('submenu/submenumanagement');
             $this->load->view('template/footer');
         }else{
             $this->Submenumanagement_model->tambahMenu();
@@ -68,7 +68,7 @@ class Submenumanagement extends CI_Controller {
             $this->load->view('template/header',$data);
             $this->load->view('template/sidebar');
             $this->load->view('template/topbar');
-            $this->load->view('editsubmenu');
+            $this->load->view('submenu/editsubmenu');
             $this->load->view('template/footer');
         }else{
            

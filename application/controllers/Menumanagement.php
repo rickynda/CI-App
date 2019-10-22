@@ -22,7 +22,7 @@ class Menumanagement extends CI_Controller {
             $this->load->view('template/header',$data);
             $this->load->view('template/sidebar');
             $this->load->view('template/topbar');
-            $this->load->view('menumanagement');
+            $this->load->view('menu/menumanagement');
             $this->load->view('template/footer');
         }else{
             $this->Menumanagement_model->tambahMenu();
@@ -42,7 +42,7 @@ class Menumanagement extends CI_Controller {
             $this->load->view('template/header',$data);
             $this->load->view('template/sidebar');
             $this->load->view('template/topbar');
-            $this->load->view('editmenu',$data);
+            $this->load->view('menu/editmenu',$data);
             $this->load->view('template/footer');
         }else{
             $this->Menumanagement_model->editMenu();
