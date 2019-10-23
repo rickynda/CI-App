@@ -80,7 +80,11 @@
                 });
 
                 $(document).ready(function() {
-                    $('#example').DataTable();
+                    $('#submenumanagement').DataTable();
+                } );
+                $(document).ready(function() {
+                    $('#subcategory').DataTable();
+                    
                 } );
                
   </script>

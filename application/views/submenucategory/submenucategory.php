@@ -4,19 +4,21 @@
 
             <!-- Page Heading -->
             <h1 class="h3 mb-2 text-gray-800"><?= $title; ?></h1>
-            <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
+            <br>
+            <?= $this->session->flashdata('message'); ?>
             <?php if (validation_errors()) : ?>
             <div class="alert alert-danger" role="alert">
                 <?= validation_errors(); ?>
             </div>
             <?php endif; ?>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuCategory">Add New Submenu</a>
+
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
             
             <div class="card-body">
                 <div class="table-responsive">
-                <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="subcategory" width="100%" cellspacing="0">
                     <thead><!-- Begin Page Content -->
 
                     <tr>
@@ -33,7 +35,7 @@
                     <?php foreach ($subMenuCategory as $sm) : ?>
                     <tr>
                         <th scope="row"><?= $i; ?></th>
-                        <td><?= $sm['category_id']; ?></td>
+                        <td><?= $sm['title']; ?> (<?= $sm['category_id']; ?>)</td>
                         <td><?= $sm['category_title']; ?></td>
                         <td><?= $sm['url']; ?></td>
                        
@@ -87,7 +89,7 @@
   </div>
 
 <!-- Modal -->
-<div class="modal fade" id="newSubMenuModal" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModalLabel" aria-hidden="true">
+<div class="modal fade" id="newSubMenuCategory" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -96,29 +98,24 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('submenumanagement'); ?>" method="post">
+            <form action="<?= base_url('submenucategory'); ?>" method="post">
                 <div class="modal-body">
                 <div class="form-group">
-                        <select name="menu_id" id="menu_id" class="form-control">
-                            <option value="">Select Menu</option>
-                            <?php foreach ($menu as $m) : ?>
-                            <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
+                        <select name="categoryid" id="categoryid" class="form-control">
+                            <option value="">Select CategoryID</option>
+                            <?php foreach ($subMenuCategory as $m) : ?>
+                            <option value="<?= $m['category_id']; ?>"><?= $m['title']; ?> (<?= $m['category_id']; ?>)</option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Submenu title">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Category Title">
                     </div>
                    
                     <div class="form-group">
-                        <input type="text" class="form-control" id="categoryid" name="categoryid" placeholder="CategoryID">
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Url">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="icon" name="icon" placeholder="Submenu icon">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="target" name="target" placeholder="Alias for JS">
-                    </div>
+                   
                     
                 </div>
                 <div class="modal-footer">

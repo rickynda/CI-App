@@ -11,7 +11,7 @@ class Submenumanagement_model extends CI_Model{
                 'category_id' => $this->input->post('categoryid'),
                 'icon' => $this->input->post('icon'),
                 'target' => $this->input->post('target'),
-                'is_active' => 1   
+                'is_active' => 0   
 
             ];
         $this->db->insert('user_sub_menu',$data);

@@ -16,10 +16,14 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Add New Submenu</a>
 
-            <table class="table table-hover">
-                <thead>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal">Add New Submenu</a>
+            <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                <table class="table table-bordered" id="submenumanagement" width="100%" cellspacing="0">
+                    <thead><!-- Begin Page Content -->
+
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
@@ -56,14 +60,11 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <div class="alert alert-dark" role="alert">
-            Please use unique <a class="alert-link">CategoryID</a> for foreign key !
-            </div>
-
+                    
 
         </div>
-    </div>
-
+        </div>                  
+        </div>
 
 
 </div>
