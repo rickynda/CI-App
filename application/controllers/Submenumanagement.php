@@ -6,6 +6,7 @@ class Submenumanagement extends CI_Controller {
     public function __construct(){
         parent::__construct();
         is_logged_in();
+        isadmin();
         $this->load->model('Submenumanagement_model');
     }
     
@@ -75,9 +76,10 @@ class Submenumanagement extends CI_Controller {
            $this->Submenumanagement_model->editsubMenu();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New sub menu added!</div>');
             redirect('submenumanagement');
+            }
+        }
 
-    }
-}
+        
 
     
     

@@ -6,6 +6,7 @@ class Menumanagement extends CI_Controller {
     public function __construct(){
         parent::__construct();
         is_logged_in();
+        isadmin();
         $this->load->model('Menumanagement_model');
         
         

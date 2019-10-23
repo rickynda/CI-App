@@ -41,7 +41,7 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $sm['title']; ?></td>
                         <td><?= $sm['menu']; ?></td>
-                        <td><?= $sm['category_id']; ?></td>
+                        <td><?= $sm['title']; ?> (<?= $sm['category_id']; ?>)</td>
                         <td><?= $sm['icon']; ?></td>
                         <td>
                             <?php if($sm['is_active']==1){
@@ -65,6 +65,10 @@
         </div>
         </div>                  
         </div>
+
+        </div>
+        </div>
+
 
 
 </div>

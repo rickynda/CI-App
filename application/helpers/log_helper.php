@@ -18,3 +18,12 @@ function check_access($role_id, $menu_id)
         return "checked='checked'";
     }
 }
+
+function isadmin(){
+    
+    $ci = get_instance();
+    if($ci->session->userdata('role_id') !=1) {
+        redirect('404');
+    }
+    
+}
