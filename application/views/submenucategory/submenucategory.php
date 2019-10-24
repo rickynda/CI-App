@@ -32,15 +32,15 @@
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
-                    <?php foreach ($subMenuCategory as $sm) : ?>
+                    <?php foreach ($menu as $sm) : ?>
                     <tr>
                         <th scope="row"><?= $i; ?></th>
-                        <td><?= $sm['title']; ?> (<?= $sm['category_id']; ?>)</td>
+                        <td><?= $sm['category_title']; ?> (<?= $sm['category_id']; ?>)</td>
                         <td><?= $sm['category_title']; ?></td>
                         <td><?= $sm['url']; ?></td>
                        
                         <td>
-                            <?php if($sm['is_active']==1){
+                            <?php if($sm['is_activee']==1){
                                echo '<span class="badge badge-pill badge-primary">Active</span>';
                             }else{
                                echo ' <span class="badge badge-pill badge-secondary">Non Active</span>';
@@ -56,12 +56,12 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <br>
+            
             </div>
             </div>
           </div>
-          </div>
-          </div>
+          
+         
 
 
 </div>
@@ -83,7 +83,7 @@
         
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?= base_url(); ?>submenumanagement/delete/<?= $sm['id']; ?>">Yes</a>
+          <a class="btn btn-primary" href="<?= base_url(); ?>submenucategory/delete/<?= $sm['id']; ?>">Yes</a>
         </div>
       </div>
     </div>
