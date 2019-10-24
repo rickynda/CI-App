@@ -17,6 +17,7 @@ class Submenumanagement extends CI_Controller {
         $this->load->model('Menu_model', 'menu');
         $data['subMenu'] = $this->menu->getSubMenu();
         $data['menu'] = $this->db->get('user_menu')->result_array();
+        $data['submenuu'] = $this->db->get('user_sub_menu')->result_array();
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('menu_id', 'Menu', 'required');

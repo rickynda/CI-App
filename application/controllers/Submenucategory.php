@@ -18,6 +18,7 @@ class Submenucategory extends CI_Controller {
         $this->load->model('Menu_model', 'menu');
         $data['subMenuCategory'] = $this->menu->getSubMenuCategory();
         $data['menu'] = $this->db->get('user_sub_menu_category')->result_array();
+        
 
         $this->form_validation->set_rules('title', 'Category Title', 'required');
         $this->form_validation->set_rules('url', 'Url', 'required');
@@ -44,6 +45,7 @@ class Submenucategory extends CI_Controller {
         $data['subMenuCategory'] = $this->menu->getSubMenuCategory();
         $data['menu'] = $this->db->get('user_sub_menu_category')->result_array();
         $data['category'] = $this->db->get_where('user_sub_menu_category', ['id' => $id])->row_array();
+        $data['submenuu'] = $this->db->get('user_sub_menu')->result_array();
         
 
         $this->form_validation->set_rules('title', 'Category Title', 'required');

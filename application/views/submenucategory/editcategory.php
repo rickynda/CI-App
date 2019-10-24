@@ -19,7 +19,7 @@
                 </label>
                 <div class="col-sm-3">
                 <select name="isactivee" id="isactivee" class="form-control">
-                            <?php if ($category['is_active']== 1) : ?>
+                            <?php if ($category['is_activee']== 1) : ?>
                              <option value="1" selected>Active</option>
                              <option value="0">Non Active</option>
                             <?php else : ?>
@@ -35,11 +35,11 @@
                 <div class="col-sm-3">
                 <select name="categoryid" id="categoryid" class="form-control">
                                 
-                                <?php foreach ($subMenuCategory as $m) : ?>
-                                <?php if( $m['id'] == $category['menu_id'] ) : ?>
-                                <option value="<?= $m['category_id']; ?>" selected><?= $m['category_title']; ?>(<?= $m['category_id']; ?>)</option>
+                                <?php foreach ($submenuu as $m) : ?>
+                                <?php if( $m['category_id'] == $category['category_id'] ) : ?>
+                                <option value="<?= $m['category_id']; ?>" selected><?= $m['title']; ?>(<?= $m['category_id']; ?>)</option>
                                 <?php else : ?>
-                                <option value="<?= $m['category_id']; ?>"><?= $m['category_title']; ?> (<?= $m['category_id']; ?>)</option>
+                                <option value="<?= $m['category_id']; ?>"><?= $m['title']; ?> (<?= $m['category_id']; ?>)</option>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
                 </select>

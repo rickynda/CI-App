@@ -104,7 +104,7 @@
                 <div class="form-group">
                         <select name="categoryid" id="categoryid" class="form-control">
                             <option value="">Select CategoryID</option>
-                            <?php foreach ($subMenuCategory as $m) : ?>
+                            <?php foreach ($submenuu as $m) : ?>
                             <option value="<?= $m['category_id']; ?>"><?= $m['title']; ?> (<?= $m['category_id']; ?>)</option>
                             <?php endforeach; ?>
                         </select>
