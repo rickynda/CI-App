@@ -22,8 +22,17 @@ function check_access($role_id, $menu_id)
 function isadmin(){
     
     $ci = get_instance();
-    if($ci->session->userdata('role_id') !=1) {
-        redirect('404');
+    $role = $ci->session->userdata('role_id');
+    $query = "
+            SELECT `user_access_menu`.`role_id`
+            FROM `user_access_menu`
+            WHERE `user_access_menu`.`menu_id` = 1 
+    ";
+    $hasil = $ci->db->query($query)->result_array();
+  
+   
+    if (!in_array($role, array_column($hasil, 'role_id'))) {
+       redirect('404');
     }
     
 }
